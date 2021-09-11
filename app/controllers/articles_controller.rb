@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
 
   # instantiates a new article with values and then attempts to save it.
   def create
-    @article = Article.new(title: "...", body: "...")
+    @article = Article.new(article_params)
 
     if @article.save
       # redirects the browser to the article's page at "http://localhost:3000/articles/#{@article.id}".
