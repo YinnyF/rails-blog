@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # Set the app homepage to /articles
   root "articles#index"
   
-  # Create route to GET /articles which is mapped to the `index` action of `ArticlesController`
-  get "/articles", to: "articles#index"
-  get "/articles/:id", to: "articles#show"
+  # resources maps all of the conventional routes for a collection of resources
+  resources :articles
 end
