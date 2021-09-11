@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
   private
     # strong params for security
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :status)
     end
 
 end
