@@ -26,6 +26,24 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # fetches the article from the db and stores it in @article so it can be used.
+  # it renders edit.html.erb
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  # It re-fetches the aarticle from the db and attempts to update it with the submitted
+  # form data filtered by article_params.
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render :edit
+    end
+  end
+
   private
     # strong params for security
     def article_params
